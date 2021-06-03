@@ -21,9 +21,10 @@ x = a:0.01:b;
 F = 1./(a1.*cos(x)+ b1.*sin(x)).^2;
 F_m = @(x)1/(a1.*cos(x)+b1.*sin(x))^2;
 plot(x,F,'Linewidth',1); grid on
-[x_m,y_m] = fminbnd(F_m,a,b);
+xr=ginput(2);
+[x_m,y_m] = fminbnd(F_m,xr(1,1),xr(2,1);
 hold on
-plot(x_m,y_m,"r*",'Linewidth',1);
+plot(x_m,y_m,"r*",xr(1,1),xr(1,2),"g*",xr(2,1),xr(2,2),"g*",'Linewidth',1);
 
 %c
 clear
